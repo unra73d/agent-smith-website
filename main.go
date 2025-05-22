@@ -14,6 +14,10 @@ func main() {
         http.ServeFile(w, r, "favicon.ico")
     })
 
+    http.HandleFunc("/logo.png", func(w http.ResponseWriter, r *http.Request) {
+        http.ServeFile(w, r, "logo.png")
+    })
+
     fmt.Println("Server started at http://localhost:80")
     http.ListenAndServe(":80", nil)
 }
