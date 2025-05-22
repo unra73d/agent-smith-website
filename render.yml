@@ -1,0 +1,10 @@
+services:
+  - type: web
+    runtime: go
+    name: agent-smith
+    repo: https://github.com/unra73d/agent-smith-website
+    branch: main
+    buildCommand: go mod tidy && go build -o main main.go
+    startCommand: ./main
+    autoDeploy: true
+    plan: free
